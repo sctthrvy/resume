@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\name{Scott Harvey} % Your name
+%\address{2 Head of the River \\ Smithtown, NY 11787} % Your address
+\address{scott.harvey@stonybrook.edu \\ github.com/sctthrvy \\ Smithtown, NY \\ (631)~$\cdot$~624~$\cdot$~6265} % Your phone number and email
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf Stony Brook University, New York} \hfill {\em GPA: 3.67} \\ 
+Pursuing M.S. Computer Science \hfill {\em Jan. 2015 - May 2016}\\
+B.S. Computer Science, B.S. Applied Math \& Statistics \hfill {\em Sept. 2011 - Dec. 2014}
+  % \smallskip \\
+
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Languages & C, python, JavaSE/EE, JavaScript, SQL, SML, MATLAB \\
+Markup & XML, JSON, HTML, YAML \\
+Tools & git, *nix, MySQL Workbench, Wireshark
+\end{tabular}
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Projects}
+
+\begin{rSubsection}{fdd, {\em C Networking}}{{\em Dec. 2014}}{}{}
+\item A daemon which allows under privileged processes to obtain raw and packet sockets.
+\item Also supports other dangerous tasks such as opening and sending arbitrary files.
+\end{rSubsection}
+
+\begin{rSubsection}{ODR, {\em C Networking}}{{\em Nov. 2014}}{}{}
+\item Programmed a routing (and IP) level protocol for static networks of unknown connectivity.
+\item Used packet sockets to discover routes and deliver application payloads.
+\item Local ODR server performed the routing and multiplexed messages to apps using local sockets.
+\end{rSubsection}
+
+\begin{rSubsection}{xTCP, {\em C Networking}}{{\em Oct. 2014}}{}{}
+\item Implemented a reliable byte-stream transport protocol over UDP, based off TCP Reno.
+\item TCP features such as smoothed-RTT based retransmission timeout and fast retransmission.
+\end{rSubsection}
+
+\begin{rSubsection}{TravelociRaptor, {\em Java Webapp}}{{\em Spring 2014}}{}{}
+\item Created a flight reservation and reverse auction webapp using JSP, finishing in the top 3 of 20 teams.
+\item Designed the MySQl database to supporting users: customers, employees, and managers.
+\end{rSubsection}
+
+\begin{rSubsection}{Nachos, {\em Java OS}}{{\em Fall 2013}}{}{}
+\item Worked on modules of a simulated OS in Java which ran MIPS executables.
+%\item Implemented paging and virutal memory 
+\item Extended the kernel to support mmap/munmap along with a write-back cache for disk accesses.
+%\item Implemented a persistent file system, including a consistency check akin to fsck.
+%\item Extended the cpu to support switchable (at boot-time) scheduling hueristics.
+%\item Implemented switchable c-look, c-scan disk I/O scheduling.
+%\item Loaded compiled C programs on/off disk, initializing their virtual address space.
+%\item Extended the kernel and MIPS syscall interface to trap new syscalls provided to C user programs. Created mmap, munmap, yield, join, exec, read,write, exit, ...
+%\item Logged stats of user threads: number of disk I/O’s, time spent in kernel mode, blocked, user mode.
+\end{rSubsection}
+
+\begin{rSubsection}{Spriter, {\em Java Application}}{{\em Fall 2012}}{}{}
+\item Created a 2D drawing editor using Swing to create sequences of poses for animating game sprites.
+\item Completed from an unfinished and broken starting state of 25+ classes.
+%\item Saved/loaded sprites into internal XML files based on shapes drawn.
+%\item Added exporting to sequential PNGs based on animation, for 2D game use.
+\end{rSubsection}
+
+% \begin{rSubsection}{}{}{}{}
+% \item 
+% \item 
+% \end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Experience}
+
+\begin{rSubsection}{Stony Brook University, File Systems \& Storage Lab}{Stony Brook, NY}{Research Assistant under Prof. Scott Smolka}{July 2014 - Dec 2014}
+\item Research on hierarchical run-time assurance frameworks in MATLAB/Simulink and python
+\end{rSubsection}
+
+\end{rSection}
+
+
+\end{document}
