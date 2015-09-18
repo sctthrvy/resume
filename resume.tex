@@ -22,7 +22,7 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.3in]{geometry} % Document margins
 
 \name{Scott Harvey} % Your name
 %\address{2 Head of the River \\ Smithtown, NY 11787} % Your address
@@ -37,7 +37,7 @@
 \begin{rSection}{Education}
 
 {\bf Stony Brook University, New York} \hfill {\em GPA: 3.62} \\ 
-Pursuing M.S. Computer Science \hfill {\em May 2016}\\
+M.S. Computer Science \hfill {\em Expected May 2016}\\
 B.S. Computer Science, B.S. Applied Math \& Statistics \hfill {\em Dec. 2014}
   % \smallskip \\
 
@@ -51,9 +51,8 @@ B.S. Computer Science, B.S. Applied Math \& Statistics \hfill {\em Dec. 2014}
 \begin{rSection}{Skills}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Languages & C, python, Java, x86-64, SQL, JavaScript, SML, MATLAB \\
-%Markup & XML, JSON, HTML, YAML \\
-Tools/Other & git, make, CMake, *nix, MySQL Workbench, Wireshark
+Languages & C, Python, Java, x86-64, SQL, JavaScript, SML, MATLAB \\
+Tools/Other & git, Vim, make, CMake, GDB, *nix, Perforce, MySQL Workbench, Wireshark
 \end{tabular}
 
 \end{rSection}
@@ -65,32 +64,38 @@ Tools/Other & git, make, CMake, *nix, MySQL Workbench, Wireshark
 
 \begin{rSection}{Projects}
 
-\begin{rSubsection}{File Descriptor Daemon, {\em C Networking}}{{\em Dec. 2014}}{}{}
-\item Designed daemon which allows under privileged processes to obtain raw and packet sockets.
-\item Useful when users may want raw sockets but admin does not want them to have root or NET\_CAP\_RAW.
+\begin{rSubsection}{SBUnix, {\em C/x86-64 Preemptive OS}}{{\em Spring 2015}}{}{}
+\item Implemented COW forking, 64 bit ELF loading, ring-3 userland, timesliced prememption.
+\item Developed a shell with sleep/kill/ps, standard library, read-only FS, pipes, auto-growing stack.
+\end{rSubsection}
+
+\begin{rSubsection}{File Descriptor Daemon, {\em C Networking}}{{\em Winter 2014}}{}{}
+\item Designed a daemon which allows under privileged processes to obtain raw and packet sockets.
+\item Created to replace setuid or NET\_CAP\_RAW on a machine intended for packet socket programming.
 %\item Also supports other dangerous tasks such as opening and sending arbitrary files.
 \end{rSubsection}
 
-\begin{rSubsection}{On Demand Routing, {\em C Networking}}{{\em Nov. 2014}}{}{}
+\begin{rSubsection}{On Demand Routing, {\em C Networking}}{{\em Fall 2014}}{}{}
 \item Programmed a shortest-hop routing protocol to replace IP in static networks of unknown connectivity.
-\item Used packet sockets to discover routes and deliver application payloads.
-\item Local ODR server performed the routing and multiplexed messages to apps using local sockets.
+%\item Used packet sockets to discover routes and forward application payloads.
+%\item Local ODR server performed the routing and multiplexed messages to apps using local sockets.
+\item Used packet sockets for route discovery and forwarding; local sockets for delivering payloads to apps.
 \end{rSubsection}
 
-\begin{rSubsection}{xTCP, {\em C Networking}}{{\em Oct. 2014}}{}{}
+\begin{rSubsection}{xTCP, {\em C Networking}}{{\em Fall 2014}}{}{}
 \item Implemented a reliable byte-stream transport protocol over UDP, based off TCP Reno.
-\item TCP features such as smoothed-RTT based retransmission timeout and fast retransmission.
+\item Featured smoothed-RTT based retransmission timeout and fast retransmission.
 \end{rSubsection}
 
 \begin{rSubsection}{TravelociRaptor, {\em Java Webapp}}{{\em Spring 2014}}{}{}
-\item Created a flight reservation and reverse auction webapp using JSP, finishing as the top 3 of 20 teams.
-\item Designed the MySQl database to support: customers, employees, and managers.
+\item Created a flight reservation and reverse auction webapp using JSP, SQL, and Bootstrap.
+\item Designed the MySQl database to support customers, employees, and managers.
 \end{rSubsection}
 
 \begin{rSubsection}{Nachos, {\em Java OS}}{{\em Fall 2013}}{}{}
-\item Worked on modules of a simulated OS in Java which ran MIPS executables.
+\item Worked on modules of a Java OS which ran COFF binaries using a MIPS emulator.
 %\item Implemented paging and virutal memory 
-\item Extended the kernel to support mmap/munmap along with a write-back cache for disk accesses.
+\item Added virtual memory, a program loader, various syscalls, a write-back cache and a disk driver.
 %\item Implemented a persistent file system, including a consistency check akin to fsck.
 %\item Extended the cpu to support switchable (at boot-time) scheduling hueristics.
 %\item Implemented switchable c-look, c-scan disk I/O scheduling.
@@ -106,11 +111,6 @@ Tools/Other & git, make, CMake, *nix, MySQL Workbench, Wireshark
 %\item Added exporting to sequential PNGs based on animation, for 2D game use.
 \end{rSubsection}
 
-% \begin{rSubsection}{}{}{}{}
-% \item 
-% \item 
-% \end{rSubsection}
-
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
@@ -122,8 +122,16 @@ Tools/Other & git, make, CMake, *nix, MySQL Workbench, Wireshark
 
 \begin{rSection}{Experience}
 
-\begin{rSubsection}{Stony Brook University, File Systems \& Storage Lab}{Stony Brook, NY}{Research Assistant under Prof. Scott Smolka}{July 2014 - Dec 2014}
-\item Research on hierarchical run-time assurance frameworks using MATLAB/Simulink and python
+\begin{rSubsection}{Software Development Intern, {\em Arista Networks}}{\em Summer 2015}{}{}
+%\item Added features and tests to a new agent that manages tunnel interfaces in EOS, a Linux switch OS.
+\item Added features and tests to an agent that manages tunnel interfaces in EOS.
+\item Worked on project to run routing protocols across GRE tunnels.
+%\item Scale tested tunnels to determine rate limits to protect the CPU.
+%\item Control Plane Policing of various tunneled traffic.
+\end{rSubsection}
+
+\begin{rSubsection}{Research Assistant under Prof. Scott Smolka, {\em Stony Brook University}}{\em July - Dec 2014}{}{}
+\item Researched run-time assurance frameworks using MATLAB/Simulink and Python.
 \end{rSubsection}
 
 \end{rSection}
